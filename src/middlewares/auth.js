@@ -14,8 +14,11 @@ export const authenticateJWT = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
+    console.log(decoded,'decoded');
+    
 
     const user = await UserRepository.findByEmail(decoded.email);
+    
 
     if (!user) {
       return res.status(403).json({ error: "Access forbidden. User profile not active or not found." });

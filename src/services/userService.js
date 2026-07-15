@@ -57,7 +57,7 @@ export class UserService {
     const user = await UserRepository.findById(id);
     if (!user) throw { status: 404, message: "User not found" };
 
-    if (user.email === "admin@rbac.com") {
+    if (user.email === "admin@gamil.com.com") {
       throw { status: 403, message: "Forbidden: Default Admin account cannot be deleted." };
     }
 

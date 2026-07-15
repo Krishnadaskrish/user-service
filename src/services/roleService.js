@@ -25,7 +25,7 @@ export class RoleService {
     const user = await UserRepository.findById(userId);
     if (!user) throw { status: 404, message: "User profile not found" };
 
-    if (user.email === "admin@rbac.com" && roleName !== "Admin") {
+    if (user.email === "admin@gamil.com" && roleName !== "Admin") {
       throw { status: 403, message: "Forbidden: Default Admin account must keep the Admin role." };
     }
 
