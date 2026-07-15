@@ -14,9 +14,6 @@ export const authenticateJWT = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    console.log(decoded,'decoded');
-    
-
     const user = await UserRepository.findByEmail(decoded.email);
     
 
@@ -29,13 +26,11 @@ export const authenticateJWT = async (req, res, next) => {
     const role = roleRow ? roleRow.name : "None";
     const roleId = roleRow ? roleRow.id : null;
 
-    // Fetch user's resolved permissions from Repository
     let permissions = [];
     if (roleId) {
       permissions = await UserRepository.resolveUserPermissions(roleId);
     }
 
-    // Attach profile, role, and permissions details to the request object
     req.user = {
       id: user.id,
       email: user.email,

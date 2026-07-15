@@ -42,7 +42,6 @@ export const dbAll = (sql, params = []) => {
 
 export const initDb = async () => {
   try {
-    // 1. Create tables
     await dbRun(`
       CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
