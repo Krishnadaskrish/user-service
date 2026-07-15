@@ -15,7 +15,6 @@ export const authenticateJWT = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
 
-    // Fetch user profile from Repository
     const user = await UserRepository.findByEmail(decoded.email);
 
     if (!user) {
