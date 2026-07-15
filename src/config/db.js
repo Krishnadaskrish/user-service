@@ -160,7 +160,7 @@ export const initDb = async () => {
     console.log("[USER-DB] Role-Permission maps verified.");
 
     // 5. Seed default Admin user profile
-    const defaultAdminEmail = "admin@gamil.com";
+    const defaultAdminEmail = "admin@gmail.com";
     const existingUser = await dbGet("SELECT id FROM users WHERE email = ?", [defaultAdminEmail]);
     if (!existingUser) {
       const userRes = await dbRun(
