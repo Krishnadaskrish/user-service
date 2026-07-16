@@ -16,7 +16,6 @@ app.get("/health", (req, res) => {
   res.json({ service: "user-service", status: "up" });
 });
 
-// Mount modular routing endpoints
 app.use("/users", userRoutes);
 app.use("/roles", roleRoutes);
 app.use("/permissions", permissionRoutes);

@@ -1,6 +1,6 @@
 import { UserService } from "../services/userService.js";
 
-// Get list of all users or paginated user profiles
+// Get list of all users 
 export const getUsers = async (req, res) => {
   try {
     const page = req.query.page ? parseInt(req.query.page) : null;
@@ -14,7 +14,7 @@ export const getUsers = async (req, res) => {
   }
 };
 
-// Create new user (calls business logic in Service)
+// Create new user 
 export const createUser = async (req, res) => {
   const { first_name, last_name, email, password, role } = req.body;
 
@@ -36,7 +36,7 @@ export const createUser = async (req, res) => {
   }
 };
 
-// Delete user (calls business logic in Service)
+// Delete user 
 export const deleteUser = async (req, res) => {
   const { id } = req.params;
 

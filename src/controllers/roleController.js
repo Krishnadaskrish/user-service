@@ -1,6 +1,6 @@
 import { RoleService } from "../services/roleService.js";
 
-// Fetch list of roles, their descriptions, and mapped permissions
+// Fetch list of roless
 export const getRoles = async (req, res) => {
   try {
     const roles = await RoleService.getRoles();
